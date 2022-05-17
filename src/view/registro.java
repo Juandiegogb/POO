@@ -4,12 +4,17 @@
  */
 package view;
 
+import java.awt.*;
+import javax.swing.JPanel;
+
 /**
  *
  * @author juand
  */
 public class registro extends javax.swing.JFrame {
-String vacio = "";
+
+    String vacio = "";
+
     public registro() {
         initComponents();
         this.setLocationRelativeTo(this);
@@ -25,16 +30,17 @@ String vacio = "";
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        volver = new javax.swing.JPanel();
+        volverLabel = new javax.swing.JLabel();
+        azul = new javax.swing.JPanel();
         cc_registro = new javax.swing.JTextField();
         nombre_registro1 = new javax.swing.JTextField();
         clave_registro = new javax.swing.JTextField();
         confirma_clave = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
+        panelCrearUsuario = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        x = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -42,36 +48,50 @@ String vacio = "";
         setSize(new java.awt.Dimension(395, 340));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel2.setPreferredSize(new java.awt.Dimension(397, 30));
+        volver.setBackground(new java.awt.Color(51, 153, 255));
+        volver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                volverMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                volverMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                volverMouseExited(evt);
+            }
+        });
+        volver.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        volverLabel.setForeground(new java.awt.Color(255, 255, 255));
+        volverLabel.setText("🢀");
+        volverLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                volverLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                volverLabelMouseExited(evt);
+            }
+        });
+        volver.add(volverLabel, new java.awt.GridBagConstraints());
+
+        getContentPane().add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
+
+        azul.setBackground(new java.awt.Color(51, 153, 255));
+
+        javax.swing.GroupLayout azulLayout = new javax.swing.GroupLayout(azul);
+        azul.setLayout(azulLayout);
+        azulLayout.setHorizontalGroup(
+            azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 397, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        azulLayout.setVerticalGroup(
+            azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(azul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        cc_registro.setForeground(new java.awt.Color(0, 153, 153));
+        cc_registro.setForeground(new java.awt.Color(51, 153, 255));
         cc_registro.setText("Número de cédula");
         cc_registro.setPreferredSize(new java.awt.Dimension(125, 25));
         cc_registro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,10 +99,9 @@ String vacio = "";
                 cc_registroMouseEntered(evt);
             }
         });
-        getContentPane().add(cc_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 190, -1));
+        getContentPane().add(cc_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 190, -1));
 
-        nombre_registro1.setBackground(new java.awt.Color(255, 255, 255));
-        nombre_registro1.setForeground(new java.awt.Color(0, 153, 153));
+        nombre_registro1.setForeground(new java.awt.Color(51, 153, 255));
         nombre_registro1.setText("Nombres y apellidos");
         nombre_registro1.setPreferredSize(new java.awt.Dimension(125, 25));
         nombre_registro1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,9 +120,9 @@ String vacio = "";
                 nombre_registro1ActionPerformed(evt);
             }
         });
-        getContentPane().add(nombre_registro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 190, -1));
+        getContentPane().add(nombre_registro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 190, -1));
 
-        clave_registro.setForeground(new java.awt.Color(0, 153, 153));
+        clave_registro.setForeground(new java.awt.Color(51, 153, 255));
         clave_registro.setText("Contraseña");
         clave_registro.setPreferredSize(new java.awt.Dimension(125, 25));
         clave_registro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,9 +130,9 @@ String vacio = "";
                 clave_registroMouseEntered(evt);
             }
         });
-        getContentPane().add(clave_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 190, -1));
+        getContentPane().add(clave_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 190, -1));
 
-        confirma_clave.setForeground(new java.awt.Color(0, 153, 153));
+        confirma_clave.setForeground(new java.awt.Color(51, 153, 255));
         confirma_clave.setText("Confirmación");
         confirma_clave.setPreferredSize(new java.awt.Dimension(125, 25));
         confirma_clave.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -121,41 +140,57 @@ String vacio = "";
                 confirma_claveMouseEntered(evt);
             }
         });
-        getContentPane().add(confirma_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 190, -1));
+        getContentPane().add(confirma_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 190, -1));
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel3.setPreferredSize(new java.awt.Dimension(397, 30));
-        jPanel3.setLayout(new java.awt.GridBagLayout());
+        panelCrearUsuario.setBackground(new java.awt.Color(51, 153, 255));
+        panelCrearUsuario.setPreferredSize(new java.awt.Dimension(397, 30));
+        panelCrearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelCrearUsuarioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panelCrearUsuarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panelCrearUsuarioMouseExited(evt);
+            }
+        });
+        panelCrearUsuario.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Crear usuario");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 24, 8, 29);
-        jPanel3.add(jLabel2, gridBagConstraints);
+        panelCrearUsuario.add(jLabel2, gridBagConstraints);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 120, 40));
+        getContentPane().add(panelCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel1.setText("REGISTRO DE NUEVO USUARIO.");
+        jLabel1.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel1.setText("REGISTRO DE NUEVO USUARIO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout xLayout = new javax.swing.GroupLayout(x);
+        x.setLayout(xLayout);
+        xLayout.setHorizontalGroup(
+            xLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+        xLayout.setVerticalGroup(
+            xLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, 40));
+        getContentPane().add(x, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -165,7 +200,7 @@ String vacio = "";
     }//GEN-LAST:event_nombre_registro1MouseClicked
 
     private void nombre_registro1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombre_registro1MouseEntered
-        
+
     }//GEN-LAST:event_nombre_registro1MouseEntered
 
     private void cc_registroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cc_registroMouseEntered
@@ -182,9 +217,9 @@ String vacio = "";
 
     private void nombre_registro1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombre_registro1MouseExited
         String nombre = nombre_registro1.getText();
-        if(nombre.equals(vacio)){
+        if (nombre.equals(vacio)) {
             nombre_registro1.setText("Nombres y apellidos");
-            
+
         }
     }//GEN-LAST:event_nombre_registro1MouseExited
 
@@ -192,34 +227,49 @@ String vacio = "";
 
     }//GEN-LAST:event_nombre_registro1ActionPerformed
 
+    private void panelCrearUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCrearUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelCrearUsuarioMouseClicked
+
+    private void panelCrearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCrearUsuarioMouseEntered
+        panelCrearUsuario.setBackground(new Color(50, 173, 255));
+    }//GEN-LAST:event_panelCrearUsuarioMouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+
+    }//GEN-LAST:event_jLabel2MouseExited
+
+    private void panelCrearUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCrearUsuarioMouseExited
+        panelCrearUsuario.setBackground(new Color(51, 153, 255));
+    }//GEN-LAST:event_panelCrearUsuarioMouseExited
+
+    private void volverLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverLabelMouseEntered
+    }//GEN-LAST:event_volverLabelMouseEntered
+
+    private void volverLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverLabelMouseExited
+         volverLabel.setBackground(new Color(51, 153, 255));    }//GEN-LAST:event_volverLabelMouseExited
+
+    private void volverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseEntered
+        volver.setBackground(new Color(50, 173, 255));
+    }//GEN-LAST:event_volverMouseEntered
+
+    private void volverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseExited
+        volver.setBackground(new Color(51, 153, 255));
+    }//GEN-LAST:event_volverMouseExited
+
+    private void volverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseClicked
+        login Login =new login();
+        Login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_volverMouseClicked
+
+    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new registro().setVisible(true);
@@ -228,15 +278,16 @@ String vacio = "";
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel azul;
     private javax.swing.JTextField cc_registro;
     private javax.swing.JTextField clave_registro;
     private javax.swing.JTextField confirma_clave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField nombre_registro1;
+    private javax.swing.JPanel panelCrearUsuario;
+    private javax.swing.JPanel volver;
+    private javax.swing.JLabel volverLabel;
+    private javax.swing.JPanel x;
     // End of variables declaration//GEN-END:variables
 }

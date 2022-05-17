@@ -15,13 +15,9 @@ import view.splash;
  */
 public class ProyectoPOO {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         splash Splash = new splash();
         Splash.setVisible(true);
-
         /* String usuario = "root";
         String clave = "";
         String url = "jdbc:mysql://localhost:3306/usuarios";

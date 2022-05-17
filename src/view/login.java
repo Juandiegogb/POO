@@ -7,13 +7,15 @@ package view;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author juand
  */
 public class login extends javax.swing.JFrame {
-
+int a=50,b=173,c=255; // colores de entrada en boton 
+int x=51,y=153,z =255; // colores de salida en boton 
     
     
     
@@ -34,8 +36,7 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         contraseña_textfield = new javax.swing.JPasswordField();
         usuario_textfield = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -43,27 +44,16 @@ public class login extends javax.swing.JFrame {
         label_login = new javax.swing.JLabel();
         panel_registro = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
@@ -79,7 +69,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        contraseña_textfield.setForeground(new java.awt.Color(0, 153, 153));
+        contraseña_textfield.setForeground(new java.awt.Color(51, 153, 255));
         contraseña_textfield.setText("******");
         contraseña_textfield.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -91,9 +81,9 @@ public class login extends javax.swing.JFrame {
                 contraseña_textfieldActionPerformed(evt);
             }
         });
-        getContentPane().add(contraseña_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 190, 30));
+        getContentPane().add(contraseña_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 190, 30));
 
-        usuario_textfield.setForeground(new java.awt.Color(0, 153, 153));
+        usuario_textfield.setForeground(new java.awt.Color(51, 153, 255));
         usuario_textfield.setText("Usuario(CC)");
         usuario_textfield.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,7 +97,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(usuario_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 190, 30));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,8 +112,11 @@ public class login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 450, 30));
 
-        panel_ingresa.setBackground(new java.awt.Color(0, 153, 153));
+        panel_ingresa.setBackground(new java.awt.Color(51, 153, 255));
         panel_ingresa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panel_ingresaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 panel_ingresaMouseEntered(evt);
             }
@@ -143,9 +136,9 @@ public class login extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(6, 22, 6, 30);
         panel_ingresa.add(label_login, gridBagConstraints);
 
-        getContentPane().add(panel_ingresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 100, 25));
+        getContentPane().add(panel_ingresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 100, 25));
 
-        panel_registro.setBackground(new java.awt.Color(0, 153, 153));
+        panel_registro.setBackground(new java.awt.Color(51, 153, 255));
         panel_registro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 panel_registroMouseClicked(evt);
@@ -164,20 +157,20 @@ public class login extends javax.swing.JFrame {
         jLabel1.setText("REGISTRATE");
         panel_registro.add(jLabel1, new java.awt.GridBagConstraints());
 
-        getContentPane().add(panel_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 100, 25));
+        getContentPane().add(panel_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 100, 25));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, 40));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -197,19 +190,19 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseClicked
 
     private void panel_registroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_registroMouseEntered
-        panel_registro.setBackground(new Color(3, 183, 183));
+        panel_registro.setBackground(new Color(a,b,c));
     }//GEN-LAST:event_panel_registroMouseEntered
 
     private void panel_ingresaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_ingresaMouseEntered
-        panel_ingresa.setBackground(new Color(3, 183, 183));
+        panel_ingresa.setBackground(new Color(a,b,c));
     }//GEN-LAST:event_panel_ingresaMouseEntered
 
     private void panel_ingresaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_ingresaMouseExited
-        panel_ingresa.setBackground(new Color(0, 153, 153));
+        panel_ingresa.setBackground(new Color(x,y,z));
     }//GEN-LAST:event_panel_ingresaMouseExited
 
     private void panel_registroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_registroMouseExited
-        panel_registro.setBackground(new Color(0, 153, 153));
+        panel_registro.setBackground(new Color(x,y,z));
 
     }//GEN-LAST:event_panel_registroMouseExited
 
@@ -226,6 +219,11 @@ public class login extends javax.swing.JFrame {
     private void usuario_textfieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usuario_textfieldKeyPressed
 
     }//GEN-LAST:event_usuario_textfieldKeyPressed
+
+    private void panel_ingresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_ingresaMouseClicked
+        
+        
+    }//GEN-LAST:event_panel_ingresaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -246,9 +244,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPasswordField contraseña_textfield;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel label_login;
     private javax.swing.JPanel panel_ingresa;
     private javax.swing.JPanel panel_registro;
