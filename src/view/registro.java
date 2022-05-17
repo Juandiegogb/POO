@@ -184,7 +184,7 @@ String vacio = "";
         String nombre = nombre_registro1.getText();
         if(nombre.equals(vacio)){
             nombre_registro1.setText("Nombres y apellidos");
-            System.out.println("hola");
+            
         }
     }//GEN-LAST:event_nombre_registro1MouseExited
 
