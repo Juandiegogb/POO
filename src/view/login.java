@@ -14,9 +14,7 @@ import javax.swing.JOptionPane;
  * @author juand
  */
 public class login extends javax.swing.JFrame {
-int a=50,b=173,c=255; // colores de entrada en boton 
-int x=51,y=153,z =255; // colores de salida en boton 
-    
+
     
     
 
@@ -39,11 +37,11 @@ int x=51,y=153,z =255; // colores de salida en boton
         jPanel5 = new javax.swing.JPanel();
         contraseña_textfield = new javax.swing.JPasswordField();
         usuario_textfield = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
         panel_ingresa = new javax.swing.JPanel();
         label_login = new javax.swing.JLabel();
         panel_registro = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -58,6 +56,7 @@ int x=51,y=153,z =255; // colores de salida en boton
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 102, 204));
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(420, 200));
         setResizable(false);
@@ -96,21 +95,6 @@ int x=51,y=153,z =255; // colores de salida en boton
             }
         });
         getContentPane().add(usuario_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 190, 30));
-
-        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 450, 30));
 
         panel_ingresa.setBackground(new java.awt.Color(51, 153, 255));
         panel_ingresa.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,6 +143,21 @@ int x=51,y=153,z =255; // colores de salida en boton
 
         getContentPane().add(panel_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 100, 25));
 
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 450, 30));
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -190,19 +189,19 @@ int x=51,y=153,z =255; // colores de salida en boton
     }//GEN-LAST:event_formMouseClicked
 
     private void panel_registroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_registroMouseEntered
-        panel_registro.setBackground(new Color(a,b,c));
+        panel_registro.setBackground(new Color(50,173,255));
     }//GEN-LAST:event_panel_registroMouseEntered
 
     private void panel_ingresaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_ingresaMouseEntered
-        panel_ingresa.setBackground(new Color(a,b,c));
+        panel_ingresa.setBackground(new Color(50,173,255));
     }//GEN-LAST:event_panel_ingresaMouseEntered
 
     private void panel_ingresaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_ingresaMouseExited
-        panel_ingresa.setBackground(new Color(x,y,z));
+        panel_ingresa.setBackground(new Color(51, 153, 255));
     }//GEN-LAST:event_panel_ingresaMouseExited
 
     private void panel_registroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_registroMouseExited
-        panel_registro.setBackground(new Color(x,y,z));
+        panel_registro.setBackground(new Color(51, 153, 255));
 
     }//GEN-LAST:event_panel_registroMouseExited
 
